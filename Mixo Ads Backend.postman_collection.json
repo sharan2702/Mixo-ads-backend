@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "f0e0b741-fa2f-4836-8a9b-643bb32f64ae",
+		"name": "Mixo Ads Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49409377"
+	},
+	"item": [
+		{
+			"name": "POST /connect-account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"platform\": \"meta\",\n  \"account_id\": \"acc_123\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/connect-account/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"connect-account",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /create-campaign",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"platform\": \"meta\",\n  \"account_id\": \"acc_123\",\n  \"campaign_name\": \"New Product Launch\",\n  \"objective\": \"LEADS\",\n  \"budget\": 1000,\n  \"idempotency_key\": \"abc123\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/create-campaign/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"create-campaign",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /batch-create-ads",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"platform\": \"meta\",\n  \"account_id\": \"acc_123\",\n  \"campaign_id\": \"cmp_123\",\n  \"ads\": [\n    { \"headline\": \"Amazing Product!\", \"description\": \"Try it now!\" },\n    { \"headline\": \"Best Deal Today\", \"description\": \"Limited offer!\" }\n  ],\n  \"batch_id\": \"batch_001\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/batch-create-ads/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"batch-create-ads",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /generate-ad-copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"product\": \"Protein Shake\",\n  \"audience\": \"Fitness Enthusiasts\",\n  \"tone\": \"Exciting\",\n  \"format\": \"headlines+descriptions\",\n  \"n\": 3\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/generate-ad-copy/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"generate-ad-copy",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /fetch-analytics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/fetch-analytics?platform=meta&account_id=acc_123/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"fetch-analytics"
+					],
+					"query": [
+						{
+							"key": "platform",
+							"value": "meta"
+						},
+						{
+							"key": "account_id",
+							"value": "acc_123/"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "OPENAI_API_KEY",
+			"value": ""
+		}
+	]
+}

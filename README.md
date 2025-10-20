@@ -1,6 +1,3 @@
-Here’s the **full README in Markdown code** ready to copy into your `README.md` file:
-
-````markdown
 # Mixo Ads Backend
 
 ## Overview
